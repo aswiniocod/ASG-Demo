@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: webapp-sample/
+    destination: /var/www/html/
+    overwrite: true
+file_exists_behavior: OVERWRITE
+branch_config:
+    wip\/.*: ~ 
+    main:
+        deploymentGroupName: MY-APP-DG
+        deploymentGroupConfig:
+            serviceRoleArn: arn:aws:iam::891376908875:role/CodeDeployRole
